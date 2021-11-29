@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick And Morty</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header></header>
+        <div id="search">
+            <p>Page number:</p>
+            <input type="number" id="input" placeholder="This field is required*">
+            <p>Life status:</p>
+            <select name="isAlive" id="isAlive">
+                <option id="empty"aria-placeholder="Dead or Alive"></option>
+                <option value="alive">Alive</option>
+                <option value="dead">Dead</option>
+                <option value="unknown">Unknown</option>
+            </select>
+            <button id="button">Wubba Lubba Dub Dub!</button>
+        </div>
+        <div id="error">
+            <i class="hidden" id="errorMsg">Get your sh*t together! Page number is required</i>
+        </div>
+      
+            <div id="content"></div>
+
+    </div>
+ 
+    <script src="js/main.js"></script>
+</body>
+</html>
