@@ -6,7 +6,8 @@ body{
     width: 960px;
     height: auto;
     margin: 0 auto;
-    background-color: #a9799b;
+    background-color: #22071a;
+    opacity: 0.9;
 }
 
 header{
@@ -26,84 +27,89 @@ header{
     justify-content: space-between;
     
 }
-#input{
-    padding: 5px;
-    height: fit-content;
-    margin-top: 1em;
-    max-width: 200px;
-}
-
 #isAlive, #species{
-    width: 10%;
-    padding: 5px;
+    width: 100px;
+    padding: 10px;
     height: fit-content;
-    margin-top: 1em;
+    margin-top: 0.75em;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-#button {
-  background-color: transparent;
-  border: 1px solid #266DB6;
-  box-sizing: border-box;
-  color: #00132C;
-  font-family: "Avenir Next LT W01 Bold",sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  padding: 16px 23px;
-  position: relative;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+/* INPUT*/
+span {
+    position: relative;
+    display: inline-block;
+    margin: 11px 15px;
 }
-
-#button:hover,
-#button:active {
-  outline: 0;
+#input{
+    display: inline-block;
+    width: 200px;
+    padding: 11px 0 11px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #377D6A;
+    background: #efefef;
+    border: 0;
+    border-radius: 3px;
+    outline: 0;
+    text-indent: 70px;
+    transition: all .3s ease-in-out;
+    border: solid 1px #ccc;
 }
-
-#button:hover {
-  background-color: transparent;
-  cursor: pointer;
+#input::-webkit-input-placeholder {
+    color: #efefef;
+    text-indent: 0;
+    font-weight: 300;
 }
-
-#button:before {
-  background-color: #D5EDF6;
-  content: "";
-  height: calc(100% + 3px);
-  position: absolute;
-  right: -7px;
-  top: -9px;
-  transition: background-color 300ms ease-in;
-  width: 100%;
-  z-index: -1;
+#input + label {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 15px;
+    text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+    background: #f3ce41;
+    transition: all .3s ease-in-out;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
-
-#button:hover:before {
-  background-color: #6DCFF6;
-}
-
-.container{
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    border: 1px solid black;
-}
-
-#content{
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    padding: 5px;
+#input:focus,
+#input:active {
+    color: #377D6A;
+    text-indent: 0;
+    background: #fff;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     
-
+}
+#input:focus::-webkit-input-placeholder,
+#input:active::-webkit-input-placeholder {
+    color: #aaa;
+    font-family: 'Courier New', Courier, monospace;
+}
+#input:focus + label,
+#input:active + label {
+    transform: translateX(-100%);
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* ERROR MESSAGE*/
+.error{
+  animation: shake 0.2s ease-in-out 0s 2;
+  box-shadow: 0 0 0.5em red;
+}
+
+@keyframes shake {
+    0% { margin-left: 0rem; }
+    25% { margin-left: 0.5rem; }
+    75% { margin-left: -0.5rem; }
+    100% { margin-left: 0rem; }
+  }
+
 .hidden{
     color: red;
     display: none;
@@ -114,7 +120,72 @@ background-color: white;
 display: flex;
 justify-content: center;
 font:red;
+
 }
+
+
+/* BUTTON */
+#button {
+    background-color: #3DD1E7;
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.75rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    width: 100%;
+    max-width: 200px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    touch-action: manipulation;
+  }
+  
+  #button:focus {
+    outline: 0;
+  }
+  
+  #button:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+  }
+  
+  #button:hover:after {
+    bottom: 2px;
+    left: 2px;
+  }
+
+
+.container{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#content{
+    background-color: grey;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    padding: 5px;
+    
+
+}
+/*.........CONTENT.....*/
 
 article{
     border: 1px solid white;

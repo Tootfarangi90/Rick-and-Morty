@@ -12,31 +12,30 @@
     <div class="container">
         <header></header>
         <div id="search">
-                <p>Page number:</p>
-            <input type="number" id="input" placeholder="Number between 1-42*">
-               <p>Life status:</p>
-               <select name="isAlive" id="isAlive">
-                   <option id="empty"aria-placeholder="Dead or Alive"></option>
-                   <option value="alive">Alive</option>
-                   <option value="dead">Dead</option>
-                   <option value="unknown">Unknown</option>
-               </select>
-               <p id="pSpecies" class="hidden">Species</p>
-               <select name="species" id="species" class="hidden">
-                   <option value="human">Human</option>
-                   <option value="alien">Alien</option>
-                   <option value="unknown">Unknown</option>
-               </select>
+            <span>
+                <input type="number" id="input" placeholder="Pick a number between 1-42"><label for="input">Page number:</label>
 
+                <select name="isAlive" id="isAlive">
+                    <option label="Status"></option>
+                    <option value="alive">Alive</option>
+                    <option value="dead">Dead</option>
+                    <option value="unknown">Unknown</option>
+                </select>
+                <select name="species" id="species" class="hidden">
+                    <option label="Species"></option>
+                    <option value="human">Human</option>
+                    <option value="alien">Alien</option>
+                    <option value="unknown">Unknown</option>
+                </select>
            
-
-            <button id="button">Wubba Lubba Dub Dub!</button>
+        </span>
+            <button id="button">Search</button>
         </div>
         <div id="error">
             <i class="hidden" id="errorMsg">Get your sh*t together! Page number is required</i>
         </div>
       
-            <div id="content"></div>
+            <div id="content" ></div>
 
     </div>
  

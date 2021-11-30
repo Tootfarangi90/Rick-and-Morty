@@ -13,14 +13,14 @@ button.addEventListener('click', ()=>{
 if ((input.value<1 || input.value>42 || input.value == "") && (isAlive.value == "" || isAlive.value == "alive" || isAlive == "dead" || isAlive == "unknown")){
     errorMsg.classList.remove('hidden')
     errorMsg.style.color = "red"
+    input.classList.add('error')
     failSound.play()  
 }
 
 else{
 errorMsg.classList.add('hidden')
 species.classList.remove('hidden')
-pSpecies.classList.remove('hidden')
-content.style.backgroundColor ="gray" 
+input.classList.remove("error")
 buttonSound.play()
 getPage()
 }
@@ -43,7 +43,7 @@ async function getPage(){
               <figcaption>${item.name}</figcaption>
             </figure>
                  <section>
-                 <p class=\"info\">
+                 <p>
                     <strong>Gender:</strong> ${item.gender} <br>
                     <strong>Species:</strong> ${item.species} <br>
                     <strong>Life status:</strong> ${item.status}
@@ -53,11 +53,6 @@ async function getPage(){
                  </article>`
     }
     content.innerHTML = contentHTML
- 
-    a.addEventListener('click', ()=>{
-        let info = document.getElementsByClassName('info')
-        info.classList.toggle('info')
-    })
 
 
 } catch (error) {
